@@ -1,0 +1,470 @@
+:root {
+  --bg: #f5f1ea;
+  --bg-soft: #fbf8f3;
+  --ink: #1f2732;
+  --muted: #5c6773;
+  --line: rgba(31, 39, 50, 0.12);
+  --accent: #223a5b;
+  --accent-soft: #dce4ef;
+  --warm: #9f7950;
+  --card: rgba(255, 255, 255, 0.72);
+  --shadow: 0 24px 60px rgba(28, 38, 53, 0.08);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(159, 121, 80, 0.1), transparent 28%),
+    radial-gradient(circle at top right, rgba(34, 58, 91, 0.12), transparent 32%),
+    linear-gradient(180deg, #f7f2eb 0%, #f3efe8 100%);
+  font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(31, 39, 50, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 39, 50, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  content: "";
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 85%);
+}
+
+.site-shell {
+  position: relative;
+  width: min(calc(100% - 40px), var(--max-width));
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  backdrop-filter: blur(18px);
+}
+
+.brand,
+.nav a,
+.contact-panel a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand {
+  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  font-size: 0.96rem;
+}
+
+.nav a {
+  position: relative;
+  color: var(--muted);
+}
+
+.nav a::after {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  content: "";
+}
+
+.nav a:hover::after,
+.nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.section {
+  padding: 56px 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  min-height: calc(100vh - 88px);
+  padding-top: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--warm);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+}
+
+.hero h1,
+.section-heading h2 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Baskerville", "Songti SC", serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  font-size: clamp(3.6rem, 7vw, 6.8rem);
+  line-height: 0.95;
+}
+
+.hero h1 span {
+  display: block;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  letter-spacing: 0;
+}
+
+.hero-text,
+.project-summary,
+.info-card p,
+.info-card li,
+.contact-panel p,
+.footer p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-text {
+  max-width: 640px;
+  margin: 30px 0 0;
+  font-size: 1.02rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 132px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button.primary {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.button.secondary {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-panels {
+  display: grid;
+  gap: 18px;
+  width: min(100%, 430px);
+}
+
+.feature-card {
+  border: 1px solid rgba(31, 39, 50, 0.08);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+}
+
+.award-card {
+  padding: 38px 34px;
+}
+
+.award-card p,
+.feature-mini p {
+  margin: 0;
+  color: #77808c;
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.award-card h3 {
+  margin: 28px 0 0;
+  font-family: "Iowan Old Style", "Baskerville", "Songti SC", serif;
+  font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.feature-mini {
+  padding: 22px 24px;
+}
+
+.feature-mini strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.metrics article,
+.info-card,
+.project-card,
+.contact-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.metrics article {
+  padding: 22px;
+}
+
+.metrics span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.metrics strong {
+  display: block;
+  margin-top: 10px;
+  font-family: "Iowan Old Style", "Baskerville", "Songti SC", serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+}
+
+.section-heading {
+  display: grid;
+  gap: 12px;
+  max-width: 740px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4.3vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.intro-cards,
+.split-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.split-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.info-card,
+.project-card,
+.contact-panel {
+  padding: 24px;
+}
+
+.info-card h3,
+.project-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.info-card p,
+.info-card ul,
+.project-card ul {
+  margin: 0;
+}
+
+.info-card ul,
+.project-card ul {
+  padding-left: 18px;
+}
+
+.info-card li,
+.project-card li {
+  margin-bottom: 8px;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-group span {
+  padding: 10px 12px;
+  border: 1px solid rgba(34, 58, 91, 0.12);
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.project-list {
+  display: grid;
+  gap: 18px;
+}
+
+.project-card {
+  padding: 28px;
+}
+
+.project-head {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.project-index {
+  margin: 0;
+  color: var(--warm);
+  font-family: "Iowan Old Style", "Baskerville", "Songti SC", serif;
+  font-size: 1.5rem;
+}
+
+.project-summary {
+  margin: 14px 0 14px;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.contact-panel {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+}
+
+.contact-panel a {
+  font-size: 1.2rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 0 42px;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .contact-section,
+  .intro-cards,
+  .split-grid,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 20px;
+  }
+
+  .hero-visual {
+    justify-content: flex-start;
+  }
+
+  .nav {
+    gap: 14px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-shell {
+    width: min(calc(100% - 24px), var(--max-width));
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 0;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 15vw, 4.4rem);
+  }
+
+  .project-head {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+}
