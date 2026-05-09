@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>徐浩铨 | Personal Website</title>
+    <meta
+      name="description"
+      content="徐浩铨的个人网站，展示教育背景、课程项目、实践经历与 GitHub 信息。"
+    />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#home">XU HAOQUAN</a>
+        <nav class="nav">
+          <a href="#about">关于</a>
+          <a href="#projects">项目</a>
+          <a href="#experience">经历</a>
+          <a href="#contact">联系</a>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section class="hero section reveal">
+          <div class="hero-copy">
+            <p class="eyebrow">BUPT / Information & Communication Engineering</p>
+            <h1>
+              徐浩铨
+              <span>AI × 多模态学习 × 项目实践</span>
+            </h1>
+            <p class="hero-text">
+              北京邮电大学信息与通信工程专业本科生，目前主要在课程学习和项目实践中接触多模态问答、智能体系统、计算机视觉与通信相关内容。
+              平时会把课堂知识和实际练习结合起来，希望在不断尝试中慢慢积累经验。
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#projects">查看项目</a>
+              <a class="button secondary" href="#contact">联系我</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-panels">
+              <article class="feature-card award-card">
+                <p>学习状态</p>
+                <h3>现在主要通过项目实践来学习，也在持续接触大模型和 Agent 方向的内容</h3>
+              </article>
+              <article class="feature-card feature-mini">
+                <p>本科阶段</p>
+                <strong>北京邮电大学 信息与通信工程</strong>
+              </article>
+              <article class="feature-card feature-mini">
+                <p>GitHub</p>
+                <strong>github.com/Thyguad</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="metrics section reveal">
+          <article>
+            <span>学校</span>
+            <strong>北京邮电大学</strong>
+          </article>
+          <article>
+            <span>专业</span>
+            <strong>信息与通信工程</strong>
+          </article>
+          <article>
+            <span>英语能力</span>
+            <strong>CET-6 517</strong>
+          </article>
+          <article>
+            <span>常做内容</span>
+            <strong>课程项目与实践记录</strong>
+          </article>
+        </section>
+
+        <section class="section intro-grid" id="about">
+          <div class="section-heading reveal">
+            <p class="eyebrow">ABOUT</p>
+            <h2>我更喜欢从课程、项目和实践里，一点点把想法做出来。</h2>
+          </div>
+          <div class="intro-cards">
+            <article class="info-card reveal">
+              <h3>教育背景</h3>
+              <p>2022.09 - 2026.06</p>
+              <p>北京邮电大学 信息与通信工程（本科）</p>
+              <p>GPA 3.33 / 4.0，专业排名前 40%</p>
+              <p>主修课程：数学分析、线性代数、信号与系统、数字信号处理、通信原理、现代通信技术</p>
+            </article>
+            <article class="info-card reveal">
+              <h3>目前在做的事</h3>
+              <ul>
+                <li>学习多模态文档理解、检索增强生成与系统评测相关内容</li>
+                <li>尝试把 LLM、CV 和工程流程结合到课程项目里</li>
+                <li>也在通过拍摄和剪辑实践提升表达与展示能力</li>
+              </ul>
+            </article>
+            <article class="info-card reveal">
+              <h3>关键词</h3>
+              <div class="tag-group">
+                <span>VLM + RAG</span>
+                <span>Qwen2.5-VL</span>
+                <span>LangGraph</span>
+                <span>Triplet Loss</span>
+                <span>通信优化</span>
+                <span>系统测试</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-heading reveal">
+            <p class="eyebrow">SELECTED PROJECTS</p>
+            <h2>下面这些项目主要来自学习过程中的课程设计、实验和阶段性实践。</h2>
+          </div>
+
+          <div class="project-list">
+            <article class="project-card reveal">
+              <div class="project-head">
+                <p class="project-index">01</p>
+                <h3>基于多模态数据的智能问答平台设计与实现</h3>
+              </div>
+              <p class="project-summary">
+                围绕复杂图文文档场景下的信息理解问题，完成了一个基于 VLM + RAG 的多模态问答平台设计与实现。
+              </p>
+              <ul>
+                <li>完成文档解析、知识库构建、混合检索与回答生成等核心模块开发</li>
+                <li>基于 Qwen2.5-VL 实现版面结构识别、Markdown 转换、图片裁剪与 Caption 生成</li>
+                <li>构建图文联合索引与图片召回增强机制，支持文本检索、关键词检索、关联图片展示</li>
+                <li>构建 groundtruth 数据集并完成回答质量评估与系统测试</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-head">
+                <p class="project-index">02</p>
+                <h3>基于 MoCo 的人脸验证模型</h3>
+              </div>
+              <p class="project-summary">
+                结合课程学习内容，尝试用 MoCo + Triplet Loss 的方法完成人脸验证模型训练与效果验证。
+              </p>
+              <ul>
+                <li>基于 MTCNN 完成人脸预处理与数据流程搭建</li>
+                <li>设计两阶段训练策略，并结合 semi-hard triplet 进行优化</li>
+                <li>ResNet-50 在 LFW 上取得 85.1% Accuracy、0.844 AUC、0.821 F1-score</li>
+              </ul>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-head">
+                <p class="project-index">03</p>
+                <h3>基于 LangGraph 与 LLM 的链路智能规划系统</h3>
+              </div>
+              <p class="project-summary">
+                围绕链路参数优化这一问题，尝试搭建基于 LangGraph + LLM 的链路智能规划系统。
+              </p>
+              <ul>
+                <li>设计需求解析、环境感知、规划、执行、观测、反思的 PAOR Agent 工作流</li>
+                <li>支持带宽、天线数、载波频率、MCS 等参数的动态优化</li>
+                <li>在 64 个测试用例上完成 benchmark，系统取得 87.50% 达标率与 79.55 平均效用</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-layout" id="experience">
+          <div class="section-heading reveal">
+            <p class="eyebrow">EXPERIENCE</p>
+            <h2>除了课程学习，我也在通过校园实践慢慢补足表达和协作能力。</h2>
+          </div>
+
+          <div class="split-grid">
+            <article class="info-card reveal">
+              <h3>校园与竞赛经历</h3>
+              <ul>
+                <li>本科生三等奖学金 2 次</li>
+                <li>参与课程项目、系统测试、文档整理与方案复盘</li>
+                <li>在学习过程中注重把知识点转化为实际的小项目和阶段成果</li>
+              </ul>
+            </article>
+
+            <article class="info-card reveal">
+              <h3>实践与表达能力</h3>
+              <ul>
+                <li>大学生记者团影视部成员，参与校园活动拍摄与视频剪辑</li>
+                <li>熟悉从内容策划、素材采集到后期输出的完整流程</li>
+                <li>重视项目展示、视觉叙事与技术沟通</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section contact-section reveal" id="contact">
+          <div class="contact-copy">
+            <p class="eyebrow">CONTACT</p>
+            <h2>如果想看看我的项目记录，或者简单交流学习内容，可以直接联系我。</h2>
+          </div>
+          <div class="contact-panel">
+            <a href="tel:13001237192">13001237192</a>
+            <a href="mailto:xhq204723@bupt.edu.cn">xhq204723@bupt.edu.cn</a>
+            <a href="https://github.com/Thyguad" target="_blank" rel="noreferrer">GitHub / Thyguad</a>
+            <p>北京 · 中国</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Built with HTML, CSS, JavaScript.</p>
+        <p><span id="year"></span> Xu Haoquan</p>
+      </footer>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
